@@ -38,3 +38,23 @@ Wait for the pods to all be in running state. Run the command below to follow:
 
         Kubectl -n argocd get pods
         kubectl -n argocd port-forward argocd-server-xxxxxxxx 8080
+
+   Alternatively, you can set up a LoadBalancer service to get an external IP through which you can access your site.
+
+   First, get your  minikube ip by running the command
+
+           minikube ip
+   Navigate to the K8s directory
+
+           cd K8s
+   Create the service in the frontend namespace
+
+           kubectl create -f service.yaml -n frontend
+   patch your node ip as a LoadBalancer to the service created
+
+           kubectl patch svc moringa-web-page-service -n frontend -p '{"spec": {"type": "LoadBalancer", "externalIPs":["192.168.49.2"]}}' #replace "192.168.49.2" with your minikube ip
+   Use you minikube ip to access the website
+
+           http://192.168.49.2/
+
+         
