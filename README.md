@@ -38,4 +38,3 @@ Wait for the pods to all be in running state. Run the command below to follow:
 
         Kubectl -n argocd get pods
         kubectl -n argocd port-forward argocd-server-xxxxxxxx 8080
-
