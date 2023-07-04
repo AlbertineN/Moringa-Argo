@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-web-page
-        image: figent/moringa-image:latest
+        image: figent/moringa-image:newcolor
         imagePullPolicy: Always
         ports:
         - containerPort: 80
