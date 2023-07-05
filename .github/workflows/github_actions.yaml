@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: figent/moringa-image:yellow
+          tags: figent/moringa-image:orangered
 
 #      - name: Checkout code
 #        env:
